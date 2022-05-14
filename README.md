@@ -1,7 +1,6 @@
 # How to add multiple sites here
 
-* Build you react app by modifying the `homepage` property in package.json to "." to create [relative URLs](https://create-react-app.dev/docs/deployment/#building-for-relative-paths).
-`npm run build`
+* Build you react app using 'npm run build' by modifying the `homepage` property in package.json to "." to create [relative URLs](https://create-react-app.dev/docs/deployment/#building-for-relative-paths).
 * Create directory with the project name at root level in this repo
 * Copy everything inside build folder to this new directory
 * Update the index.html and add a new entry for the new project. Change pic if needed. The important part is the link should have correct directory name
