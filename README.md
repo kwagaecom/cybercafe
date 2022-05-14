@@ -1,3 +1,13 @@
+# How to add multiple sites here
+
+* Build you react app by modifying the `homepage` property in package.json to "." to create [relative URLs](https://create-react-app.dev/docs/deployment/#building-for-relative-paths).
+`npm run build`
+* Create directory with the project name at root level in this repo
+* Copy everything inside build folder to this new directory
+* Update the index.html and add a new entry for the new project. Change pic if needed. The important part is the link should have correct directory name
+* Push the changes to github
+* Netlify should detect this push and start auto depoyment
+
 # [Start Bootstrap - Stylish Portfolio](https://startbootstrap.com/themes/stylish-portfolio/)
 
 [Stylish Portfolio](https://startbootstrap.com/themes/stylish-portfolio/) is a responsive, one page portfolio theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/). The theme features multiple content sections with an off canvas navigation menu.
