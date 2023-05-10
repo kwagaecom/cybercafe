@@ -40,6 +40,9 @@
     body {
       background-color: black;
       color: white;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none; /* IE 10 and IE 11 */
+      user-select: none; /* Standard syntax */
     }
     .footer {
       cursor: pointer;
@@ -83,7 +86,7 @@
   <div class="button" onclick="closeFullscreen()">Exit fullscreen</div>
 </div>
 <div class="footer">
-  <div>Black screen to prevent light glare from monitor. Double click anywhere to toggle.</div>
+  <div class="info">Black screen to prevent light glare from monitor. Double click anywhere to toggle.</div>
   <div><a href="https://cybercafe.dev">cybercafe.dev © 2023</a></div>
 </div>
 </body>
