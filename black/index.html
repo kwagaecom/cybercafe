@@ -1,14 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html ondblclick="toggleFullScreen()">
 <head>
   <title>Black Background Page</title>
+  <script>
+    /* Get the documentElement (<html>) to display the page in fullscreen */
+    var elem = document.documentElement;
+
+    /* View in fullscreen */
+    function openFullscreen() {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+
+    /* Close fullscreen */
+    function closeFullscreen() {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) { /* Safari */
+        document.webkitExitFullscreen();
+      } else if (document.msExitFullscreen) { /* IE11 */
+        document.msExitFullscreen();
+      }
+    }
+
+    function toggleFullScreen() {
+      if (document.fullscreenElement) {
+        closeFullscreen();
+      } else {
+        openFullscreen();
+      }
+    }
+  </script>
   <style>
     body {
       background-color: black;
       color: white;
     }
+    .footer {
+      cursor: pointer;
+      color: #545454;
+      opacity: .1;
+      position: absolute;
+      bottom: 16px;
+      width: 99%;
+      display: flex;
+      font-family: monospace;
+      justify-content: space-around;
+    }
+    .footer:hover {
+      opacity: .5;
+    }
+    .footer a {
+      color: #cfcfcf;
+      text-decoration: none;
+    }
+    .button {
+      cursor: pointer;
+      color: #545454;
+      opacity: .1;
+      margin: auto;
+      width: 30%;
+      text-align: center;
+      font-size: 3em;
+      font-family: monospace;
+    }
+    .button:hover {
+      opacity: .5;
+    }
+    .wrapper {
+      margin-top: 40vh;
+    }
   </style>
 </head>
-<body>
+<body >
+<div class="wrapper">
+  <div class="button" onclick="openFullscreen()">Fullscreen</div>
+  <div class="button" onclick="closeFullscreen()">Exit fullscreen</div>
+</div>
+<div class="footer">
+  <div>Black screen to prevent light glare from monitor. Double click anywhere to toggle.</div>
+  <div><a href="https://cybercafe.dev">cybercafe.dev © 2023</a></div>
+</div>
 </body>
 </html>
