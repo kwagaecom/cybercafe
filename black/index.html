@@ -8,7 +8,7 @@
 
     /* View in fullscreen */
     function openFullscreen() {
-      if (elem.requestFullscreen) {
+      if (document.fullscreenEnabled) {
         elem.requestFullscreen();
       } else if (elem.webkitRequestFullscreen) { /* Safari */
         elem.webkitRequestFullscreen();
