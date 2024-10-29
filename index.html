@@ -43,34 +43,112 @@
 
 </head>
 
-<body id="page-top">
+<body 
 
   <!-- Navigation -->
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
+ 
+ <button id="open-sidebar" class="open-btn">☰</button>
+<nav id="sidebar-wrapper">
+    <div class="sidebar-header">
+        <button id="close-sidebar" class="close-btn">X</button>
+    </div>
     <ul class="sidebar-nav">
-      <li class="sidebar-brand">
-        <a class="js-scroll-trigger" href="#home">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#services">Services</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#about">About</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#gallery">Gallery</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="#review">Review</a>
-      </li>
+        <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="#home">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#services">Services</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#gallery">Gallery</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#review">Review</a>
+        </li>
     </ul>
-  </nav>
+</nav>
 
+<style>
+/* Sidebar Styling */
+#sidebar-wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transform: translateX(-100%); /* Initially hidden */
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.open-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #333;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav-item a {
+    display: block;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const sidebar = document.getElementById("sidebar-wrapper");
+    const openButton = document.getElementById("open-sidebar");
+    const closeButton = document.getElementById("close-sidebar");
+
+    // Open sidebar
+    openButton.addEventListener("click", () => {
+        sidebar.style.transform = "translateX(0)";
+    });
+
+    // Close sidebar
+    closeButton.addEventListener("click", () => {
+        sidebar.style.transform = "translateX(-100%)";
+    });
+
+    // Close sidebar on link click
+    document.querySelectorAll(".js-scroll-trigger").forEach(link => {
+        link.addEventListener("click", () => {
+            sidebar.style.transform = "translateX(-100%)";
+        });
+    });
+});
+
+</script>
   <!-- Header -->
-<section id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+<section id="carouselExample" class="carousel slide" data-bs-ride="carousel"id="home">
   <div class="carousel-inner">
     <!-- Slide 1 -->
     <div class="carousel-item active">
@@ -211,7 +289,151 @@
 <!-- Bootstrap JS, Popper.js, and jQuery (for Bootstrap 5) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<section class="section_all bg-light" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section_title_all text-center">
+                            <h3 class="font-weight-bold">Welcome To <span class="text-custom">Lorem Ipsum</span></h3>
+                            <p class="section_subtitle mx-auto text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. <br/>Lorem Ipsum has been the industry's standard dummy text.</p>
+                            <div class="">
+                                <i class=""></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row vertical_content_manage mt-5">
+                    <div class="col-lg-6">
+                        <div class="about_header_main mt-3">
+                            <div class="about_icon_box">
+                                <p class="text_custom font-weight-bold">Lorem Ipsum is simply dummy text</p>
+                            </div>
+                            <h4 class="about_heading text-capitalize font-weight-bold mt-4">Lorem Ipsum is simply dummy text of the printing industry.</h4>
+                            <p class="text-muted mt-3">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.</p>
+
+                            <p class="text-muted mt-3"> Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img_about mt-3">
+                            <img src="https://i.ibb.co/qpz1hvM/About-us.jpg" alt="" class="img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Creative Design</h5>
+                                <p class="edu_desc mt-3 mb-0 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="fab fa-angellist"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">We make Best Result</h5>
+                                <p class="edu_desc mb-0 mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">best platform </h5>
+                                <p class="edu_desc mb-0 mt-3 text-muted">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+        h1, h2, h3, h4, h5, h6 {
+    color: #2c3145;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.section_all {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+.section-title {
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    letter-spacing: 0.4px;
+    line-height: 28px;
+    max-width: 550px;
+}
+
+.section-title-border {
+    background-color: #000;
+    height: 1 3px;
+    width: 44px;
+}
+
+.section-title-border-white {
+    background-color: #fff;
+    height: 2px;
+    width: 100px;
+}
+.text_custom {
+    color: #00bd2a;
+}
+
+.about_icon i {
+    font-size: 22px;
+    height: 65px;
+    width: 65px;
+    line-height: 65px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 35px;
+    color: #00bd2a;
+    box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
+}
+
+.about_header_main .about_heading {
+    max-width: 450px;
+    font-size: 24px;
+}
+
+.about_icon span {
+    position: relative;
+    top: -10px;
+}
+
+.about_content_box_all {
+    padding: 28px;
+}
+</style>
 
   <!-- About
   <section class="content-section bg-light" id="about">
@@ -288,7 +510,7 @@
   </section> -->
 
   <!-- Portfolio -->
-  <section class="content-section" id="portfolio">
+  <section class="content-section" id="services">
     <div class="container">
       <div class="content-section-heading text-center">
         <h3 class="text-secondary mb-0">Our Services</h3>
@@ -559,6 +781,74 @@
     </div>
   </div>
 </div>
+<div style="max-width: 600px; margin: 20px auto; border: 2px solid #2196F3; border-radius: 8px; overflow: hidden;">
+  <!-- Train Booking -->
+  <div style="border-bottom: 1px solid #2196F3;">
+    <button data-ui-tablist-tab style="width: 100%; padding: 15px; background-color: #e1f5fe; border: none; text-align: left; font-size: 18px; font-weight: bold; color: #2196F3; cursor: pointer;">🚆 Train Booking</button>
+    <div data-ui-tablist-tabpanel style="padding: 15px; display: block;">
+      <div style="font-size: 16px; color: #0D47A1;">
+        Quick and easy train booking service to secure your travel plans seamlessly.
+      </div>
+    </div>
+  </div>
+
+  <!-- Flight Booking -->
+  <div style="border-bottom: 1px solid #2196F3;">
+    <button data-ui-tablist-tab style="width: 100%; padding: 15px; background-color: #e1f5fe; border: none; text-align: left; font-size: 18px; font-weight: bold; color: #2196F3; cursor: pointer;">✈️ Flight Booking</button>
+    <div data-ui-tablist-tabpanel style="padding: 15px; display: none;">
+      <div style="font-size: 16px; color: #0D47A1;">
+        Find and book flights at the best prices with our user-friendly interface.
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Support -->
+  <div style="border-bottom: 1px solid #2196F3;">
+    <button data-ui-tablist-tab style="width: 100%; padding: 15px; background-color: #e1f5fe; border: none; text-align: left; font-size: 18px; font-weight: bold; color: #2196F3; cursor: pointer;">🛠️ Tech Support</button>
+    <div data-ui-tablist-tabpanel style="padding: 15px; display: none;">
+      <div style="font-size: 16px; color: #0D47A1;">
+        Get immediate assistance for all your tech-related issues and queries.
+      </div>
+    </div>
+  </div>
+
+  <!-- Exam Registration -->
+  <div style="border-bottom: 1px solid #2196F3;">
+    <button data-ui-tablist-tab style="width: 100%; padding: 15px; background-color: #e1f5fe; border: none; text-align: left; font-size: 18px; font-weight: bold; color: #2196F3; cursor: pointer;">📝 Exam Registration</button>
+    <div data-ui-tablist-tabpanel style="padding: 15px; display: none;">
+      <div style="font-size: 16px; color: #0D47A1;">
+        Simple and quick registration for various exams at your convenience.
+      </div>
+    </div>
+  </div>
+
+  <!-- Online Learning -->
+  <div>
+    <button data-ui-tablist-tab style="width: 100%; padding: 15px; background-color: #e1f5fe; border: none; text-align: left; font-size: 18px; font-weight: bold; color: #2196F3; cursor: pointer;">📚 Online Learning</button>
+    <div data-ui-tablist-tabpanel style="padding: 15px; display: none;">
+      <div style="font-size: 16px; color: #0D47A1;">
+        Access a variety of online courses and resources for personal and professional development.
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const accordionButtons = document.querySelectorAll('[data-ui-tablist-tab]');
+  
+  accordionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const panel = button.nextElementSibling;
+      const isOpen = panel.style.display === 'block';
+
+      document.querySelectorAll('[data-ui-tablist-tabpanel]').forEach(p => p.style.display = 'none');
+      
+      if (!isOpen) {
+        panel.style.display = 'block';
+      }
+    });
+  });
+</script>
 
  <title>Image Gallery with Zoom & Carousel</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -573,7 +863,7 @@
         }
     </style>
 
-    <div class="container mt-4">
+    <div class="container mt-4"id="gallery">
         <div class="row gallery">
             <div class="col-md-4">
                 <img src="https://media.istockphoto.com/id/2172705933/photo/delivery-man-smiling-and-carrying-heavy-water-bottle-on-blue-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=uUviNz58g_HqZwmnR_iZ-1Vf3F4bGHHYcrDQ9qV7ZhA=" class="img-fluid" data-toggle="modal" data-target="#imageModal">
@@ -752,19 +1042,112 @@
 </style>
 
   <!-- Terms -->
-  <section class="content-section bg-light" id="terms">
-    <div class="container text-center">
-      <div class="row">
-        <div class="col-lg-10 mx-auto">
-          <h2>Terms and Service</h2>
-          <p class="lead mb-5">Source code for all the projects on this site is available on my github account. The projects can be cloned and forked by anyone. Most of these are just demo example apps. Please give credit as applicable if you are using the source code in some or other way. Sharing a link to the original app or accompanying article would be great. Thanks.
-            <!-- <a href="https://unsplash.com/">Unsplash</a>!</p> -->
-          <!-- <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a> -->
+  <section id="videoCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner"align="center">
+    <!-- First Video -->
+    <div class="carousel-item active">
+    <iframe width="697" height="392" src="https://www.youtube.com/embed/B3v6T2K9e7I" title="घड़ी की दुकान कैसे खोलें? How to Start Watch Shop । Ghadi ki dukan kaise khole । Clock shop business।" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+      
+    
+    <!-- Second Video -->
+    <div class="carousel-item">
+    <iframe width="702" height="392" src="https://www.youtube.com/embed/fhjsNL5oCzw" title="घड़ी की दुकान कैसे खोलें | How to start watch and clock shop business | Watch shop business | ASK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Third Video -->
+    <div class="carousel-item">
+      <iframe width="697" height="392" src="https://www.youtube.com/embed/Rf4rU1hwQXc" title="#1 How to Start a Business with No Money? By Sandeep Maheshwari I Hindi #businessideas" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <!-- Fourth Video -->
+    <div class="carousel-item">
+      <iframe width="697" height="392" src="https://www.youtube.com/embed/DFKSsXuT8IA" title="Highway Dhaba Business | Modern Dhaba | Highway Restaurant  यह वीडियो देख लिया तो कभी फेल नहीं होंगे" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- Controls -->
+
+</section>
+<section class="contact-us my-5">
+  <div class="container">
+    <div class="row">
+      <div class="row d-flex flex-nowrap flex-row">
+        <div class="heading d-flex align-items-center">
+          <h2>Contact Us</h2>
+          <p class="ps-4">Connect with Us: Let's Discuss Your <br> Digital Marketing Needs</p>
         </div>
       </div>
     </div>
-  </section>
+    <div class="contact-wrapper position-relative overflow-hidden">
+      <div class="row">
+        <div class="col-lg-8">
+          <form action="">
+            <div class="d-flex">
+              <div class="d-flex align-items-center">
+                <input type="radio" id="radio1" name="greeting" checked>
+                <label for="radio1" class="ms-2 mb-0">Say Hi</label>
+              </div>
+              <div class="ms-3 d-flex align-items-center">
+                <input type="radio" id="radio2" name="greeting">
+                <label for="radio2" class="ms-2 mb-0">Say Hi</label>
+              </div>
+            </div>
+            <label class="mt-3" for="">Name</label> <br>
+            <input class="form-control" type="text" placeholder="Name">
 
+            <label class="mt-3" for="">Email</label> <br>
+            <input class="form-control" type="email" placeholder="Name">
+
+            <label class="mt-3" for="">Message</label> <br>
+            <textarea class="form-control" name="" id="" placeholder="Message"></textarea>
+
+            <input class="form-control mt-3 bg-dark text-white" type="submit" value="Send Message">
+          </form>
+        </div>
+        <img class="contact-bg d-none d-lg-block" src="https://codewithshabbir.github.io/Positivus/assets/images/contact-bg.png" alt="">
+
+      </div>
+    </div>
+  </div>
+</section>
+<style>
+:root {
+  --primary-color: #b9ff66;
+  --secondary-color: #191a23;
+  --body-color: #f3f3f3;
+}
+
+.contact-us .contact-wrapper {
+  border-radius: 25px;
+  padding: 40px 60px;
+  background-color: var(--body-color);
+}
+
+.contact-us .contact-wrapper input,
+.contact-us .contact-wrapper textarea {
+  background-color: white;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+
+.contact-us .contact-wrapper input:focus,
+.contact-us .contact-wrapper textarea:focus{
+  box-shadow: none;
+}
+
+.contact-bg {
+  position: absolute;
+  right: -190px;
+  width: 400px;
+}
+
+input[type="radio"] {
+  accent-color: var(--primary-color);
+}
+</style>
   <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
@@ -785,8 +1168,46 @@
           </a>
         </li>
       </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Cybercafe 2020</p>
+<style>
+        .copyright {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e0e0e0;
+        }
+        .copyright span {
+            display: inline-block;
+            margin-left: 50px;
+            color: #333;
+            font-size: 14px;
+        }
+        .copyright strong span {
+            color: #007bff; /* Change this to your preferred color */
+        }
+    </style>
+<div class="copyright">
+        <span>&copy; Copyright <strong><span class="badge rounded-pill bg-warning text-dark"><span id="yearSpan"></span></span> Cybercafe</strong>. All Rights Reserved</span>
     </div>
+<div class="credits">
+        <span>Powered By <a href="https://company.kwaga.ltd/"><span class="badge bg-warning">KraftyWebDesign</span></a></span>
+    </div>
+      <script>
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+        // Calculate the next year
+        const nextYear = currentYear + 1;
+        // Set the text in the span
+        document.getElementById('yearSpan').textContent = `${currentYear}-${nextYear}`;
+    </script>
+    </div>
+<div align="left"class="contact-info">	
+<button type="button" style="margin-left: 10px; class="btn btn-primary">
+ <h5><span class="badge bg-primary">K</span> <span class="badge bg-secondary">W</span><span class="badge bg-danger">D</span><span class="badge bg-success">4.7</span>
+<span class="badge bg-info"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+
+</h5>
+
+</button>
   </footer>
 
   <!-- Scroll to Top Button-->
